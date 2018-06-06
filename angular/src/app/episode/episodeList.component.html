@@ -1,0 +1,32 @@
+<app-episode-filter (valueChanges)='filterEpisodes($event)'></app-episode-filter>
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+</div>
+<section class="list">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Air Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let episode of episodes" [routerLink]="[episode.id, 'details']">
+                    <td>{{episode.episode}}</td>
+                    <td>{{episode.name}}</td>
+                    <td>{{episode.id}}</td>
+                    <td>{{episode.created | date}}</td>
+                    <td>{{episode.air_date | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="currentPage" [maxSize]="15" [ellipses]="false" [pageSize]="20" [boundaryLinks]="true" (pageChange)="getPage($event)">
+        </ngb-pagination>
+        <!--<app-episode *ngFor="let episode of episodes" [episode]="episode">
+        </app-episode>-->
+    </div>
+</section>

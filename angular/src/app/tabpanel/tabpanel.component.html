@@ -1,0 +1,22 @@
+<!--<ngb-tabset type="pills" justify="center">
+    <ngb-tab id="Characters" title="Characters" (click)="select('characters')">
+    </ngb-tab>
+    <ngb-tab id="Locations" title="Locations" (click)="select('locations')">
+    </ngb-tab>
+    <ngb-tab id="Episodes" title="Episodes" (click)="select('episodes')">
+    </ngb-tab>
+</ngb-tabset>-->
+<div class="btn-group btn-group-toggle" [(ngModel)]="model" ngbRadioGroup name="radioNav">
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="radio" ngbButton [value]="'characters'"
+                (click)="goTo('characters')"> Characters
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="radio" ngbButton [value]="'locations'"
+        (click)="goTo('locations')"> Locations
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="radio" ngbButton [value]="'episodes'"
+        (click)="goTo('episodes')"> Episodes
+    </label>
+</div>

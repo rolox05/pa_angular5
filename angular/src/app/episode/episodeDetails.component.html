@@ -1,0 +1,32 @@
+<div class="card">
+    <h5 class="card-header">{{episode?.name}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">id: {{episode?.id}} - created {{episode?.created | date}}</h5>
+        <div class="card-text">
+            <div>
+                <div class="text-wrapper" style="padding: 6px 0px;"><span>AIR DATE</span>
+                    <p>{{episode?.air_date | date}}</p>
+                </div>
+                <hr style="background: rgb(68, 68, 68);">
+            </div>
+            <div>
+                <div class="text-wrapper" style="padding: 6px 0px;"><span>EPISODE</span>
+                    <p>{{episode?.episode}}</p>
+                </div>
+                <hr style="background: rgb(68, 68, 68);">
+            </div>
+        </div>
+        <div>
+            <ngb-accordion activeIds="static-12 ">
+                <ngb-panel title="Characters " id="static-1 ">
+                    <ng-template ngbPanelContent>
+                        <span *ngFor="let character of episode.characters ">
+                                    <a [routerLink]="['/characters/', character | resourcePipe: 'character' , 'details']">{{character | resourcePipe:"character"}}</a>
+                                    <br>
+                                </span>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</div>

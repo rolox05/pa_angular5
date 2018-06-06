@@ -1,0 +1,32 @@
+<app-location-filter (valueChanges)='filterLocations($event)'></app-location-filter>
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+</div>
+<section class="list">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">type</th>
+                    <th scope="col">Dimension</th>
+                    <th scope="col">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let location of locations" [routerLink]="[location.id, 'details']">
+                    <td>{{location.id}}</td>
+                    <td>{{location.name}}</td>
+                    <td>{{location.type}}</td>
+                    <td>{{location.dimension}}</td>
+                    <td>{{location.created | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="currentPage" [maxSize]="15" [ellipses]="false" [pageSize]="20" [boundaryLinks]="true" (pageChange)="getPage($event)">
+        </ngb-pagination>
+        <!--<app-location *ngFor="let location of locations" [location]="location">
+        </app-location>-->
+    </div>
+</section>

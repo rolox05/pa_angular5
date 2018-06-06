@@ -1,0 +1,33 @@
+<div class="card">
+    <h5 class="card-header">{{location?.name}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">id: {{location?.id}} - created {{location?.created | date}}</h5>
+        <div class="card-text">
+            <div>
+                <div class="text-wrapper" style="padding: 6px 0px;"><span>TYPE</span>
+                    <p>{{location?.type}}</p>
+                </div>
+                <hr style="background: rgb(68, 68, 68);">
+            </div>
+            <div>
+                <div class="text-wrapper" style="padding: 6px 0px;"><span>DIMENSION</span>
+                    <p>{{location?.dimension}}</p>
+                </div>
+                <hr style="background: rgb(68, 68, 68);">
+            </div>
+
+        </div>
+        <div>
+            <ngb-accordion activeIds="static-12 ">
+                <ngb-panel title="Residentes " id="static-1 ">
+                    <ng-template ngbPanelContent>
+                        <span *ngFor="let resident of location.residents ">
+                                        <a [routerLink]="['/characters/', resident | resourcePipe: 'character' , 'details']">{{resident | resourcePipe:"character"}}</a>
+                                        <br>
+                                    </span>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</div>

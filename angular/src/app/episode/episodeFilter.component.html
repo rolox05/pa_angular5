@@ -1,0 +1,29 @@
+<ngb-accordion activeIds="static-12">
+    <ngb-panel title="Filtros" id="static-1">
+        <ng-template ngbPanelContent>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        Name:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        Code:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="code" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-offset-3 col-9">
+                        <button type="button" class="btn btn-primary" (click)="filterValues()">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

@@ -1,0 +1,25 @@
+<article class="location-wrapper">
+    <div class="location-header">
+        <div class="location-title">
+            <h2>{{location.name}}</h2>
+            <p>id: {{location.id}} - created {{location.created | date}}</p>
+        </div>
+    </div>
+    <div class="location-description" data="card info">
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>TYPE</span>
+                <p>{{location.type}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>Dimension</span>
+                <p>{{location.dimension}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <a [routerLink]="[location.id, 'details']">Details</a>
+        </div>
+    </div>
+</article>

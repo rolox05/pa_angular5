@@ -1,0 +1,60 @@
+<article class="character-wrapper">
+    <div class="character-header">
+        <img src="{{character?.image}}" alt="Blue Diplomat">
+        <div class="character-title">
+            <h2>{{character?.name}}</h2>
+            <p>id: {{character?.id}} - created {{character?.created | date}}</p>
+        </div>
+    </div>
+    <div class="character-description" data="card info">
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>STATUS</span>
+                <p>{{character?.status}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>SPECIES</span>
+                <p>{{character?.species}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>GENDER</span>
+                <p>{{character?.gender}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>TYPE</span>
+                <p>{{character?.type}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>ORIGIN</span>
+                <p>{{character?.origin?.name}}</p>
+                <a [routerLink]="['/locations/', character?.origin?.url | resourcePipe: 'location' , 'details']">Details</a>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>LAST LOCATION</span>
+                <p>{{character?.location?.name}}</p>
+                <a [routerLink]="['/locations/', character?.location?.url | resourcePipe: 'location' , 'details']">Details</a>
+            </div>
+        </div>
+        <div>
+            <ngb-accordion activeIds="static-12 ">
+                <ngb-panel title="Episodios " id="static-1 ">
+                    <ng-template ngbPanelContent>
+                        <span *ngFor="let episodio of character.episode ">
+                            <a [routerLink]="['/episodes/', episodio | resourcePipe: 'episode' , 'details']">{{episodio | resourcePipe:"episode"}}</a>
+                            <br>
+                        </span>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</article>

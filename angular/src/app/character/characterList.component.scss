@@ -1,0 +1,14 @@
+.container {
+    justify-content: space-around;
+    max-width: 1260px;
+    min-height: 40vh;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.list {
+    justify-content: center;
+    padding: 30px;
+    background: #202329;
+    min-height: calc(60vh - 80px);
+}

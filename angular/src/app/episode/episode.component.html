@@ -1,0 +1,26 @@
+<article class="episode-wrapper">
+    <div class="episode-header">
+        <img src="{{episode.image}}" alt="Blue Diplomat">
+        <div class="episode-title">
+            <h2>{{episode.name}}</h2>
+            <p>id: {{episode.id}} - created {{episode.created | date}}</p>
+        </div>
+    </div>
+    <div class="episode-description" data="card info">
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>AIR DATE</span>
+                <p>{{episode.air_date | date}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <div class="text-wrapper" style="padding: 6px 0px;"><span>EPISODE</span>
+                <p>{{episode.espisode}}</p>
+            </div>
+            <hr style="background: rgb(68, 68, 68);">
+        </div>
+        <div>
+            <a [routerLink]="[episode.id, 'details']">Details</a>
+        </div>
+    </div>
+</article>

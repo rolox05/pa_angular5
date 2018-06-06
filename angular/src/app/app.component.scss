@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/bootstrap.scss';
+.jumbotron {
+    background: linear-gradient(135deg, #0143a3, #0273d4);
+    color: #fff;
+    //margin-bottom: 60px;
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

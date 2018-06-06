@@ -1,0 +1,63 @@
+<ngb-accordion activeIds="static-12">
+    <ngb-panel title="Filtros" id="static-1">
+        <ng-template ngbPanelContent>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        Name:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        Status:
+                    </div>
+                    <div class="col-10">
+                        <div class="btn-group btn-group-toggle" ngbRadioGroup name="status" [(ngModel)]="status">
+                            <label class="btn-primary" ngbButtonLabel>
+                                      <input type="radio" ngbButton value="alive"> Alive
+                                    </label>
+                            <label class="btn-primary" ngbButtonLabel>
+                                      <input type="radio" ngbButton value="dead"> Dead
+                                    </label>
+                            <label class="btn-primary" ngbButtonLabel>
+                                      <input type="radio" ngbButton value="unknown"> Unknown
+                                    </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        Species:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="species" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        Type:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="type" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        Gender:
+                    </div>
+                    <div class="col-10">
+                        <input type="text" [(ngModel)]="gender" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-offset-3 col-9">
+                        <button type="button" class="btn btn-primary" (click)="filterValues()">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

@@ -1,0 +1,14 @@
+<app-character-filter (valueChanges)='filterCharacter($event)'></app-character-filter>
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+</div>
+<section class="list">
+    <div class="container">
+        <app-character *ngFor="let character of characters" [character]="character">
+        </app-character>
+    </div>
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="currentPage" [maxSize]="15" [ellipses]="false" [pageSize]="20" [boundaryLinks]="true" (pageChange)="getPage($event)">
+
+    </ngb-pagination>
+
+</section>
